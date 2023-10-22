@@ -1,0 +1,58 @@
+.main {
+  margin: 100px 0px;
+
+  .row {
+    display: flex;
+    gap: 40px;
+  }
+
+  .row > .col:nth-of-type(1) {
+    width: 20%;
+  }
+
+  .row > .col:nth-of-type(2) {
+    width: 80%;
+  }
+
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .services {
+    display: block;
+    overflow: hidden;
+
+    .container {
+      display: flex;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+  }
+}
+
+.container:hover {
+  padding-left: 50px;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 700px) {
+  .intro {
+    display: block !important;
+  }
+
+  .row {
+    display: block !important;
+
+    .col:nth-of-type(1) {
+      img {
+        display: none;
+      }
+    }
+
+    .col {
+      width: 100% !important;
+    }
+  }
+}

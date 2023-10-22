@@ -1,0 +1,40 @@
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0px 20px;
+  gap: 10px;
+
+  .scroll {
+    position: absolute;
+    bottom: 100px;
+    animation: scrollUpDown 1.5s linear infinite;
+  }
+
+  .container {
+    white-space: nowrap;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes scrollUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
