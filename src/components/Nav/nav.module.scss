@@ -3,16 +3,51 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  position: relative;
 
   .links {
     display: flex;
     gap: 20px;
   }
 
-  .dot {
-    height: 10px;
-    width: 10px;
-    background-color: rgb(255, 0, 0);
-    border-radius: 50px;
+  .menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .menu {
+    display: block !important;
+  }
+
+  .links {
+    display: none !important;
+  }
+
+  .offset {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    font-size: 50px;
+    height: 100vh;
+    z-index: 98;
+
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    div {
+      position: absolute;
+      bottom: 60px;
+      left: 20px;
+    }
   }
 }

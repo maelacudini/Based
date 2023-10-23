@@ -1,9 +1,19 @@
 import style from "./nav.module.scss";
-import { motion } from "framer-motion";
-import { generals } from "../../utils/animate";
+import { AnimatePresence, motion } from "framer-motion";
+import { generals, menu } from "../../utils/animate";
 import { Link } from "react-scroll";
+import { useState } from "react";
 
 export default function Nav() {
+  const date = new Date().toUTCString();
+  const [open, setOpen] = useState(false);
+
+  const toggleOffset = () => {
+    setOpen(!open);
+    const root = document.getElementById("root");
+    root.style.overflow = open ? "auto" : "hidden";
+  };
+
   return (
     <motion.nav
       variants={generals}
@@ -48,7 +58,34 @@ export default function Nav() {
           Services
         </Link>
       </div>
-      <div className={style.dot}></div>
+      <div className={style.date}>{date}</div>
+      <a onClick={toggleOffset} className={style.menu}>
+        Menu
+      </a>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            variants={menu}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className={style.offset}
+          >
+            <h1 className="title">About</h1>
+            <h1 className="title">Work</h1>
+            <h1 className="title">Services</h1>
+            <h1 className="title" onClick={toggleOffset}>
+              Close
+            </h1>
+
+            <div>
+              <p>+12 345 678 90</p>
+              <p>basedstudio@gmail.com</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

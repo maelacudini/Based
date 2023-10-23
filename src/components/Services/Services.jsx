@@ -6,18 +6,35 @@ export default function Services() {
   const design = `Design`;
   const web = `Web-Services`;
   const brand = `Brand-Identity`;
+  const services = "Services";
 
   const words = [design, web, brand];
 
   return (
     <div id="services" className={style.main}>
+      <div style={{ display: "flex", overflow: "hidden" }}>
+        {services.split("").map((letter, index) => (
+          <div key={index} className={style.letterContainer}>
+            <motion.h1
+              className="title"
+              variants={titles}
+              initial="initial"
+              whileInView="animate"
+              exit="exit"
+              custom={index}
+            >
+              {letter}
+            </motion.h1>
+          </div>
+        ))}
+      </div>
+
       <div className={style.intro}>
         <p>
           Here you can find what services we offer.
           <br />
           Working holistically, from identities to full-scale applications.
         </p>
-        <p>Season 2022-2023</p>
         <p>(SERVICES)</p>
       </div>
 

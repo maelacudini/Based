@@ -147,16 +147,10 @@ export const disperse = {
     }
 }
 
-export const line = {
-    initial: (i) => ({
-        width: '0%',
 
-    }),
-    animate: (i) => ({
-        width: '100%',
-        transition: { duration: 0.5 },
-    }),
-    exit: (i) => ({
-        width: '0%',
-    }),
+
+export const menu = {
+    initial: { x: '-100%' },
+    enter: { x: "0", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+    exit: { x: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
 }
