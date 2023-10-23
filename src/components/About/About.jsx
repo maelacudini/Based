@@ -55,10 +55,8 @@ export default function About() {
             creative powerhouse that specializes in crafting exceptional brand
             identities and web services. We are passionate about transforming
             ideas into compelling visual stories and digital experiences that
-            captivate and engage. With an unwavering commitment to innovation
-            and an eye for design that breaks boundaries, BASED is your partner
-            in building unique, memorable brands that resonate with your
-            audience.
+            captivate and engage. BASED is your partner in building unique,
+            memorable brands that resonate with your audience.
           </p>
 
           <button className="button">Read more</button>

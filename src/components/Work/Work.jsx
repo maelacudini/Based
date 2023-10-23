@@ -85,14 +85,6 @@ export default function Work({ rotate, rotateInverse }) {
           </div>
         </div>
       </div>
-
-      <div className={style.asterisk}>
-        <motion.img
-          style={{ rotate: rotate }}
-          src="./asterisk.png"
-          alt="asterisk"
-        />
-      </div>
     </div>
   );
 }

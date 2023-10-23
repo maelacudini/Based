@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export default function Services() {
   const design = `Design`;
-  const web = `Web Services`;
-  const brand = `Brand Identity`;
+  const web = `Web-Services`;
+  const brand = `Brand-Identity`;
 
   const words = [design, web, brand];
 
@@ -20,6 +20,20 @@ export default function Services() {
         <p>Season 2022-2023</p>
         <p>(SERVICES)</p>
       </div>
+
+      <video
+        loop
+        muted
+        autoPlay
+        width={"100%"}
+        height={"auto"}
+        className={style.video}
+      >
+        <source
+          src="https://static.vecteezy.com/system/resources/previews/021/626/300/mp4/squares-background-colorful-3d-free-video.mp4"
+          type="video/mp4"
+        />
+      </video>
 
       <div className={style.row}>
         <div className={style.col}>
@@ -59,25 +73,6 @@ export default function Services() {
           </div>
         </div>
       </div>
-
-      <video
-        loop
-        muted
-        autoPlay
-        width={"100%"}
-        height={"600px"}
-        style={{
-          marginTop: "20px",
-          borderRadius: "10px",
-          objectFit: "cover",
-          objectPosition: "bottom",
-        }}
-      >
-        <source
-          src="https://static.vecteezy.com/system/resources/previews/021/626/300/mp4/squares-background-colorful-3d-free-video.mp4"
-          type="video/mp4"
-        />
-      </video>
     </div>
   );
 }

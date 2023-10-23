@@ -1,5 +1,5 @@
 .main {
-  margin: 100px 0px;
+  margin: 200px 0px;
 
   .row {
     display: flex;
@@ -24,11 +24,22 @@
     display: block;
     overflow: hidden;
 
+    h1 {
+      margin-top: 5px;
+    }
+
     .container {
       display: flex;
       overflow: hidden;
       transition: 0.3s;
     }
+  }
+
+  .video {
+    object-fit: cover;
+    object-position: center;
+    margin: 40px 0px;
+    border-radius: 10px;
   }
 }
 
@@ -37,7 +48,7 @@
   transition: 0.3s;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
   .intro {
     display: block !important;
   }
