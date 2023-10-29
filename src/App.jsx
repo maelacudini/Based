@@ -12,13 +12,6 @@ import Services from "./components/Services/Services";
 import Footer from "./components/Footer/Footer";
 
 export default function App() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  const rotateInverse = useTransform(scrollYProgress, [0, 1], [360, 0]);
-
   const [loading, setLoading] = useState(true);
   const [showCursor, setShowCursor] = useState(true);
 
@@ -47,7 +40,7 @@ export default function App() {
   }, []);
 
   return (
-    <main ref={ref}>
+    <main>
       <AnimatePresence mode="wait">
         {loading ? (
           <Intro />
@@ -57,7 +50,7 @@ export default function App() {
             <Hero />
             <Nav />
             <About />
-            <Work rotate={rotate} rotateInverse={rotateInverse} />
+            <Work />
             <Services />
             <Footer />
           </main>

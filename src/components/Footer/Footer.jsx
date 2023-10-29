@@ -1,4 +1,6 @@
+import { titles } from "../../utils/animate";
 import style from "./footer.module.scss";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
@@ -26,7 +28,15 @@ export default function Footer() {
           </a>
         </div>
 
-        <img src="./BASED.svg" alt="based" width={"200px"} height={"auto"} />
+        <motion.img
+          variants={titles}
+          initial="initial"
+          whileInView="animate"
+          src="./BASED.svg"
+          alt="based"
+          width={"200px"}
+          height={"auto"}
+        />
       </div>
 
       <div className={style.copiright}>

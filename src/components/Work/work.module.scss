@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 
     .container {
       display: flex;
@@ -29,47 +29,62 @@
 
   .workgallery {
     display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
+    gap: 25px;
+    margin-bottom: 50px;
   }
 
-  .image {
+  .singleimage {
     width: 50%;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
 
-    img {
-      width: 100%;
-      height: 100%;
-      transition: 0.3s;
-      border-radius: 10px;
+    p {
+      margin-top: 5px;
     }
 
-    .hovervideo {
-      display: none;
+    .imagecontainer {
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      position: relative;
+
+      .image {
+        scale: 1.2;
+        width: 100%;
+        height: auto;
+        transition: 0.3s;
+        border-radius: 10px;
+      }
+
+      .hovervideo {
+        display: none;
+      }
     }
   }
 
-  .image:hover {
-    & img {
-      filter: blur(0.5em);
-      transition: 0.3s;
-    }
-    & .hovervideo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  .singleimage:hover {
+    .imagecontainer {
+      .image {
+        scale: 1.1;
+        filter: blur(0.5em);
+        transition: 0.3s;
+      }
+      .hovervideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      & video {
-        max-width: 300px;
-        height: auto;
-        border-radius: 10px;
+        video {
+          max-width: 300px;
+          height: auto;
+          border-radius: 10px;
+        }
       }
     }
   }
@@ -77,45 +92,17 @@
   .row {
     display: flex;
     align-items: start;
-    gap: 20px;
-
-    .col {
-      h1 {
-        margin-top: 5px;
-      }
-    }
+    gap: 50px;
 
     .col:nth-of-type(1) {
-      width: 20%;
+      width: 30%;
     }
 
     .col:nth-of-type(2) {
-      width: 80%;
-
-      .innercol {
-        display: flex;
-        gap: 20px;
-      }
-
-      .innercol > div:nth-child(1) {
-        width: 20%;
-      }
-
-      .innercol > div:nth-of-type(2) {
-        width: 80%;
-      }
-    }
-  }
-
-  .asterisk {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 100px;
-
-    img {
-      width: 50px;
-      height: 50px;
+      width: 70%;
+      display: flex;
+      gap: 25px;
+      overflow-x: hidden;
     }
   }
 }
@@ -126,10 +113,6 @@
 
     .col {
       width: 100% !important;
-
-      img {
-        display: none;
-      }
     }
   }
 
@@ -138,6 +121,7 @@
 
     .workdesc {
       display: flex;
+      margin-top: 5px;
       justify-content: space-between;
     }
   }
@@ -145,7 +129,7 @@
   .workgallery {
     display: block !important;
 
-    .image {
+    .singleimage {
       width: 100%;
       margin-bottom: 5%;
       padding: 0px;
@@ -156,13 +140,5 @@
 @media screen and (max-width: 600px) {
   .col:nth-of-type(2) {
     width: 100%;
-
-    .innercol {
-      display: block !important;
-
-      div {
-        width: 100% !important;
-      }
-    }
   }
 }

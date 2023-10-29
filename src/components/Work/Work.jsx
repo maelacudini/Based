@@ -2,7 +2,14 @@ import { arrow, titles } from "../../utils/animate";
 import style from "./work.module.scss";
 import { motion } from "framer-motion";
 
-const images = [{ url: "./img.jpg" }, { url: "./img2.jpg" }];
+const images = [
+  {
+    url: "./img.jpg",
+    title: "Working with 3D Objects",
+    company: "Polar S.r.l",
+  },
+  { url: "./img2.jpg", title: "Abstract qualities", company: "Vero Magazine" },
+];
 const work = [
   { url: "./W.svg" },
   { url: "./O.svg" },
@@ -10,7 +17,7 @@ const work = [
   { url: "./K.svg" },
 ];
 
-export default function Work({ rotate, rotateInverse }) {
+export default function Work() {
   return (
     <div id="work" className={style.main}>
       <div className={style.header}>
@@ -30,28 +37,35 @@ export default function Work({ rotate, rotateInverse }) {
           ))}
         </div>
         <div className={style.workdesc}>
-          <p>(WORK)</p>
+          <p className="link">(WORK)</p>
           <p>Season 2022 - 2023</p>
         </div>
       </div>
 
       <div className={style.workgallery}>
         {images.map((image, index) => (
-          <div key={index} className={style.image}>
-            <img src={image.url} alt={image.url} />
-            <div className={style.hovervideo}>
-              <video loop autoPlay muted>
-                <source
-                  src="https://static.vecteezy.com/system/resources/previews/021/626/300/mp4/squares-background-colorful-3d-free-video.mp4"
-                  type="video/mp4"
-                />
-              </video>
+          <div key={index} className={style.singleimage}>
+            <div className={style.imagecontainer}>
+              <img src={image.url} alt={image.url} className={style.image} />
+
+              <div className={style.hovervideo}>
+                <video loop autoPlay muted playsInline>
+                  <source
+                    src="https://static.vecteezy.com/system/resources/previews/021/626/300/mp4/squares-background-colorful-3d-free-video.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
             </div>
+
+            <a className="link">{image.title}</a>
+            <p>({image.company})</p>
           </div>
         ))}
       </div>
 
       <div className={style.row}>
+        <div className={style.col}></div>
         <div className={style.col}>
           <motion.img
             variants={arrow}
@@ -61,28 +75,14 @@ export default function Work({ rotate, rotateInverse }) {
             src="./arrow.svg"
             alt="arrow"
           />
-        </div>
-        <div className={style.col}>
-          <h1>
-            Motion that defines how brands express themselves across modern
-            media. Discover our latest works, Season 2022-2023.
-          </h1>
-          <div className={style.innercol}>
-            <div>
-              <p>(WORK)</p>
-            </div>
-            <div>
-              <p>
-                In the dynamic landscape of 2022-2023, BASED has taken
-                creativity to new heights, working relentlessly to provide
-                cutting-edge solutions that elevate brands and web experiences.
-                The 2022-2023 season has been a testament to our unwavering
-                dedication to producing work that inspires and resonates, and we
-                look forward to continuing this journey with you.
-              </p>
-              <button className="button">See more projects</button>
-            </div>
-          </div>
+          <motion.h1
+            variants={titles}
+            initial="initial"
+            whileInView="animate"
+            className="title"
+          >
+            See more
+          </motion.h1>
         </div>
       </div>
     </div>

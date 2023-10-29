@@ -1,11 +1,11 @@
 import style from "./nav.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
-import { generals, menu } from "../../utils/animate";
+import { generals, menu, titles } from "../../utils/animate";
 import { Link } from "react-scroll";
 import { useState } from "react";
 
 export default function Nav() {
-  const date = new Date().toUTCString();
+  const date = new Date().toISOString();
   const [open, setOpen] = useState(false);
 
   const toggleOffset = () => {
@@ -58,8 +58,8 @@ export default function Nav() {
           Services
         </Link>
       </div>
-      <div className={style.date}>{date}</div>
-      <a onClick={toggleOffset} className={style.menu}>
+      <div className={`link ${style.date}`}>{date}</div>
+      <a onClick={toggleOffset} className={`link ${style.menu}`}>
         Menu
       </a>
 
@@ -79,7 +79,7 @@ export default function Nav() {
               Close
             </h1>
 
-            <div>
+            <div className={style.last}>
               <p>+12 345 678 90</p>
               <p>basedstudio@gmail.com</p>
             </div>

@@ -1,14 +1,10 @@
-import {
-  useMotionValue,
-  useSpring,
-  useTransform,
-  useVelocity,
-  motion,
-} from "framer-motion";
+import { useMotionValue, useSpring, motion } from "framer-motion";
 import style from "./cursor.module.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Cursor() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
   const innerHeight = window.innerHeight;
   const innerWidth = window.innerWidth;
   const mouse = {
@@ -22,14 +18,11 @@ export default function Cursor() {
     y: useSpring(mouse.y, smoothOptions),
   };
 
-  const velocity = useVelocity(smooth.x);
-
-  const scale = useTransform(velocity, [200, 0, -200], [2, 1, 2]);
-
   const manageMouseMove = (e) => {
     const { clientX, clientY } = e;
     mouse.x.set(clientX);
     mouse.y.set(clientY);
+    setMousePosition({ x: clientX, y: clientY });
   };
 
   useEffect(() => {
@@ -44,12 +37,14 @@ export default function Cursor() {
       style={{
         left: smooth.x,
         top: smooth.y,
-        scale: scale,
       }}
       className={style.cursor}
       id="cursor"
     >
-      <img src="./plus.svg" alt="cursor" />
+      <img src="./target.svg" alt="cursor" />
+      <p>
+        X: {Math.round(mousePosition.x)}, Y: {Math.round(mousePosition.y)}
+      </p>
     </motion.div>
   );
 }

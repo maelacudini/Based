@@ -1,17 +1,16 @@
 .main {
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   video {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   .row {
     display: flex;
     justify-content: center;
     align-items: start;
-    gap: 20px;
 
     .col:nth-of-type(1) {
       width: 20%;
@@ -19,12 +18,14 @@
 
     .col:nth-of-type(2) {
       width: 80%;
-      .container {
+
+      h1 {
+        margin-bottom: 50px;
+      }
+
+      .insiderow {
         display: flex;
-        .letterContainer {
-          white-space: nowrap;
-          overflow: hidden;
-        }
+        gap: 50px;
       }
     }
   }
@@ -42,6 +43,15 @@
 
     .col:nth-of-type(2) {
       width: 100% !important;
+
+      .insiderow {
+        display: block !important;
+        gap: 25px;
+
+        .insidecol:nth-of-type(1) {
+          margin-bottom: 25px;
+        }
+      }
     }
   }
 }

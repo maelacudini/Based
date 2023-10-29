@@ -2,4 +2,15 @@
   position: fixed;
   pointer-events: none;
   z-index: 99;
+  img {
+    height: 200vh;
+    width: 5000px;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  p {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+  }
 }
