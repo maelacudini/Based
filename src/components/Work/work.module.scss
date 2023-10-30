@@ -37,7 +37,7 @@
 
     .imagecontainer {
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 5px;
       margin-bottom: 5px;
       position: relative;
 
@@ -46,7 +46,7 @@
         width: 100%;
         height: auto;
         transition: 0.3s;
-        border-radius: 10px;
+        border-radius: 5px;
       }
 
       .hovervideo {
@@ -75,7 +75,7 @@
         video {
           max-width: 300px;
           height: auto;
-          border-radius: 10px;
+          border-radius: 5px;
         }
       }
     }

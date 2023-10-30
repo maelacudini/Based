@@ -23,7 +23,7 @@ export default function About() {
       >
         <video loop autoPlay muted playsInline>
           <source
-            src="https://static.vecteezy.com/system/resources/previews/021/626/300/mp4/squares-background-colorful-3d-free-video.mp4"
+            src="https://static.vecteezy.com/system/resources/previews/014/179/153/mp4/timelapse-clouds-quickly-fly-over-the-hollywood-sign-4k-free-video.mp4"
             type="video/mp4"
           />
         </video>
