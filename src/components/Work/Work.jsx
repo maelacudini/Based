@@ -22,19 +22,16 @@ export default function Work() {
     <div id="work" className={style.main}>
       <div className={style.header}>
         <div className={style.container}>
-          {work.map((letter, index) => (
-            <div key={index} className={style.letterContainer}>
-              <motion.img
-                className={style.letter}
-                src={letter.url}
-                variants={titles}
-                initial="initial"
-                whileInView="animate"
-                exit="exit"
-                custom={index}
-              />
-            </div>
-          ))}
+          <motion.img
+            src="./WORK.svg"
+            variants={titles}
+            initial="initial"
+            whileInView="animate"
+            exit="exit"
+            custom={1}
+            width={"100%"}
+            height={"auto"}
+          />
         </div>
         <div className={style.workdesc}>
           <p className="link">(WORK)</p>

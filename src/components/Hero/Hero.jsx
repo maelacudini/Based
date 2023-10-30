@@ -3,14 +3,6 @@ import style from "./hero.module.scss";
 import { motion } from "framer-motion";
 import { generals } from "../../utils/animate";
 
-const letters = [
-  { url: "./B.svg" },
-  { url: "./A.svg" },
-  { url: "./S.svg" },
-  { url: "./E.svg" },
-  { url: "./D.svg" },
-];
-
 export default function Hero() {
   return (
     <div className={style.main}>
@@ -22,11 +14,7 @@ export default function Hero() {
         }}
         className={style.title}
       >
-        {letters.map((letter, index) => (
-          <div key={index} className={style.container}>
-            <img src={letter.url} alt={letter.url} className={style.svg} />
-          </div>
-        ))}
+        <img src="./BASED.svg" alt="based" width={"100%"} height={"auto"} />
       </motion.div>
 
       <motion.div
@@ -49,7 +37,6 @@ export default function Hero() {
           >
             Based in LA, building your brand worldwide.
           </motion.h1>
-          <button className="button">Learn more about us</button>
         </div>
         <div className={style.col}>
           <button className="button" style={{ textDecoration: "none" }}>

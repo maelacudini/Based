@@ -2,14 +2,6 @@ import { intro, titleintro } from "../../utils/animate";
 import style from "./intro.module.scss";
 import { motion } from "framer-motion";
 
-const letters = [
-  { url: "./B.svg" },
-  { url: "./A.svg" },
-  { url: "./S.svg" },
-  { url: "./E.svg" },
-  { url: "./D.svg" },
-];
-
 export default function Intro() {
   return (
     <motion.div
@@ -18,20 +10,19 @@ export default function Intro() {
       exit="exit"
       className={style.main}
     >
-      {letters.map((letter, index) => (
-        <div key={index} className={style.container}>
-          <motion.img
-            className={style.svg}
-            variants={titleintro}
-            initial="initial"
-            whileInView="animate"
-            exit="exit"
-            custom={index}
-            src={letter.url}
-            alt={letter.url}
-          />
-        </div>
-      ))}
+      <div className={style.container}>
+        <motion.img
+          variants={titleintro}
+          initial="initial"
+          whileInView="animate"
+          exit="exit"
+          custom={1}
+          src="./BASED.svg"
+          alt="based"
+          width={"100%"}
+          height={"auto"}
+        />
+      </div>
     </motion.div>
   );
 }

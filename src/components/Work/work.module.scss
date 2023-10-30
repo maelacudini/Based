@@ -9,15 +9,7 @@
 
     .container {
       display: flex;
-
-      .letterContainer {
-        white-space: nowrap;
-        overflow: hidden;
-
-        .letter {
-          width: 100%;
-        }
-      }
+      overflow-y: hidden;
     }
 
     .workdesc {

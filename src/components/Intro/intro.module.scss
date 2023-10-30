@@ -10,11 +10,7 @@
 
   .container {
     white-space: nowrap;
-    overflow: hidden;
+    overflow-y: hidden;
     width: 100%;
-
-    .svg {
-      width: 100%;
-    }
   }
 }

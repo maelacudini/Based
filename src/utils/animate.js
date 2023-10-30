@@ -27,7 +27,7 @@ export const intro = {
 
 export const titleintro = {
     initial: {
-        y: "-100%",
+        y: "100%",
     },
     animate: i => ({
         filter: "invert(100%)",

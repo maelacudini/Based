@@ -74,7 +74,7 @@ p {
 .button {
   border: none;
   background-color: transparent;
-  font-weight: 300;
+  font-weight: 300 !important;
   font-size: 1.3rem;
   text-decoration: underline;
   padding: 0;
